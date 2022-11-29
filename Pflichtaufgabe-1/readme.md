@@ -13,17 +13,17 @@ Bitte f√ºllen Sie und Ihr:e Gruppenpartner:in die folgenden Informationen sorgf√
 - Gruppe: 29
 
 Person A
-- Vorname: Shinji
-- Nachname: Ikari
-- Matrikelnummer: 1337
-- yNummer: y123
+- Vorname: Ngoc dang yeu
+- Nachname: Pham
+- Matrikelnummer: 5258848
+- yNummer: y0107768
 - Studiengang: Informatik
 - Geplanter Abschluss: Bachelor
 
 Person B
-- Vorname: Rei
-- Nachname: Ayanami
-- Matrikelnummer: 420
-- yNummer: y567
-- Studiengang: Physik
+- Vorname: Quang be con dang yeu
+- Nachname: Tran Minh
+- Matrikelnummer: 27996
+- yNummer: y10062018
+- Studiengang: cuoi vo
 - Geplanter Abschluss: Bachelor
