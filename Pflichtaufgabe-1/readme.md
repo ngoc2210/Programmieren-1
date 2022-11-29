@@ -13,12 +13,12 @@ Bitte f√ºllen Sie und Ihr:e Gruppenpartner:in die folgenden Informationen sorgf√
 - Gruppe: 29
 
 Person A
-- Vorname: Shinji
-- Nachname: Ikari
+- Vorname: Minh Quang 
+- Nachname: Tran
 - Matrikelnummer: 1337
 - yNummer: y123
 - Studiengang: Informatik
-- Geplanter Abschluss: Bachelor
+- Geplanter Abschluss: Phd
 
 Person B
 - Vorname: Rei
