@@ -21,8 +21,8 @@ Person A
 - Geplanter Abschluss: Phd
 
 Person B
-- Vorname: Quang be con dang yeu
-- Nachname: Tran Minh
+- Vorname: Be Ngoc
+- Nachname: Pham
 - Matrikelnummer: 27996
 - yNummer: y10062018
 - Studiengang: cuoi vo
