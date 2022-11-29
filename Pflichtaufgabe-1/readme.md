@@ -13,12 +13,12 @@ Bitte f√ºllen Sie und Ihr:e Gruppenpartner:in die folgenden Informationen sorgf√
 - Gruppe: 29
 
 Person A
-- Vorname: Ngoc dang yeu
-- Nachname: Pham
-- Matrikelnummer: 5258848
-- yNummer: y0107768
+- Vorname: Minh Quang 
+- Nachname: Tran
+- Matrikelnummer: 1337
+- yNummer: y123
 - Studiengang: Informatik
-- Geplanter Abschluss: Bachelor
+- Geplanter Abschluss: Phd
 
 Person B
 - Vorname: Quang be con dang yeu
