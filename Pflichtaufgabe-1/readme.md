@@ -21,7 +21,7 @@ Person A
 - Geplanter Abschluss: Phd
 
 Person B
-- Vorname: Quang be con dang yeu
+- Vorname: Quang be con
 - Nachname: Tran Minh
 - Matrikelnummer: 27996
 - yNummer: y10062018
