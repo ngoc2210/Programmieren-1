@@ -3,16 +3,14 @@ import java.util.Scanner;
 
 public class Zahlenraten{
     public static void main(String[] args){
-               if(args[]==0) {                       
-               selberraten(); 
-               }
-               else {
-               computerRaten(Integer.parseInt(args[0]);
-               }
-               
-               
-
+        if(args.length == 0) {                       
+            selberraten();
+        }
+        else {
+            computerRaten(Integer.parseInt(args[0]));             
+        }
     }
+
     public static void selberraten() {
         int Suchzahl = (int)(Math.random()*100);
         Scanner sc = new Scanner(System.in);
@@ -35,10 +33,6 @@ public class Zahlenraten{
             
     }
     
-}
-    
-
-
     public static void computerRaten(int numToGuess){
         int zahl = 1;
         int versuchZahl = 1;
@@ -51,7 +45,7 @@ public class Zahlenraten{
         System.out.println("Die Versuchzahl ist " + versuchZahl);
     }
 
-
+}
 
 
 
