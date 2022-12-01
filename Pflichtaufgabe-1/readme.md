@@ -10,7 +10,9 @@ Und vergessen Sie nicht Ihre Lösung mit `git push` auch an unseren Server zu se
 
 Bitte füllen Sie und Ihr:e Gruppenpartner:in die folgenden Informationen sorgfältig aus:
 
+
 - Gruppe: 28
+
 
 
 Person A
