@@ -10,7 +10,11 @@ Und vergessen Sie nicht Ihre Lösung mit `git push` auch an unseren Server zu se
 
 Bitte füllen Sie und Ihr:e Gruppenpartner:in die folgenden Informationen sorgfältig aus:
 
+<<<<<<< HEAD
 - Gruppe: 28
+=======
+- Gruppe: 30
+>>>>>>> 83f3a3a446ecb52dd4acae62e3d3b617c29d840e
 
 Person A
 - Vorname: Minh Quang 
