@@ -1,5 +1,4 @@
 public class FizzBuzz {
-
     public static void main(String[] args) {
         if ( args.length == 0) {
         // Wird keine in der Konsole eingegeben, wird der Satz gedrueckt
