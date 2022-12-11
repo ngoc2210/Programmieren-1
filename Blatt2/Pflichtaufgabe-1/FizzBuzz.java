@@ -20,7 +20,7 @@ public class FizzBuzz {
                 } else {
                     array[i] = array[i]; // sonst, erhalten bleiben
                 }                            
-                System.out.println("mein Array ist " + array[i]);    
+                System.out.println("mein Array " + array[i]);    
             }             
         }
     }
