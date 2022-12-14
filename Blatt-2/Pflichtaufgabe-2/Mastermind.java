@@ -9,8 +9,10 @@ public class Mastermind {
         int remainedGuessTimes;
         mastermindArray = mastermindArrayGenerator();
         
+        // Vòng for này để in ra kết quả để test thôi.
+        // Em hiểu rồi thì xóa đi nhé.
         for (int i : mastermindArray)
-        System.out.print(i); 
+            System.out.print(i); 
 
         System.out.println("");  
 
@@ -47,7 +49,6 @@ public class Mastermind {
         }
         catch (NumberFormatException ex){
             System.out.println("Geben Sie bitte nur Zahlen ein!");
-            ex.printStackTrace();
         }
     }
 
