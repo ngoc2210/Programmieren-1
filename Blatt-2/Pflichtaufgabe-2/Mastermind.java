@@ -29,19 +29,15 @@ public class Mastermind {
         }
         else {
             int[] outputArray = new int[inputArray.length - 1]; 
-            
             // copy all the elements in the original to the output array except the one at the remove index 
             for (int i = 0, k = 0; i < inputArray.length; i++) { 
- 
                 // check if index is crossed, continue without copying 
                 if (i == removeIndex) { 
                     continue; 
                 } 
-     
                 // else copy the element
                 outputArray[k++] = inputArray[i]; 
             }
-            
             return outputArray;
         }
     }
