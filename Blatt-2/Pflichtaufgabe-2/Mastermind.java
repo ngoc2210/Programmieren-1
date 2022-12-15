@@ -2,9 +2,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Mastermind {
-    private static int [] mastermindArray;
-    
-    public static void main(String args[]) {
+    private static int [] mastermindArray;    
+    public static void main(String[] args) {
         int maxGuessTimes = 10;
         int remainedGuessTimes;
         mastermindArray = mastermindArrayGenerator();

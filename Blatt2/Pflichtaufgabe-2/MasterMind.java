@@ -1,56 +1,76 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class MasterMind {
-    private static int [] mastermindArray; // Deklarieren private MastermindArray 
+public class MasterMind {   
+    private static int[] mastermindArray;
     public static void main(String[] args){
-        /*Generate random number with methode mastermindArrayGenerator */
-        mastermindArray =  mastermindArrayGenerator(); 
-        /*String[] strArray = new String[mastermindArray.length];
-        for ( int i = 0; i < mastermindArray.length; i++){
-            strArray[i] = String.valueOf(mastermindArray[i]);
-        } */
+        mastermindArray = mastermindArrayGenerator();
+        for ( int i : mastermindArray ) {
+            System.out.print (i);
+        }
         Scanner input = new Scanner(System.in);
-        String eingabe = input.next();
+        String eingabe = input.next();        
+        int Versuchzahl = 10;        
         // check if input is nummeric          
         try {
             Integer.parseInt(eingabe);
         } catch (Exception e) {
-            System.out.println("Geben Sie bitte nur eine natuerliche Zahl, deren Ziffer von 1 bis 8 und keine Wiederholung einer Ziffer!!");            
+            System.out.println("Geben Sie bitte nur eine natuerliche Zahl, deren Ziffer von 1 bis 8 und keine Wiederholung der Ziffer!!"); 
+            Versuchzahl = Versuchzahl - 1; 
+            System.out.println("die restlichen Versuchen sind " + Versuchzahl);
         }
-        eingabe = input.next();
+        /* Array places besteht aus der Zahl von richtiger Stelle und falscher Stelle.*/
+        int[] places = new int[2];
+        int richtigPosition = 0;
+        int falsePosition = 0;
+        // the return of method is Array output 
+        places = Zahlenraten(richtigPosition, falsePosition, eingabe); 
+        if ( places[0] == 4 ) {
+            System.out.println(" Sie sind gewonnen. ");          
+        } else {  
+            eingabe = input.next();            
+            int len = eingabe.length();
+            // check the length of Input        
+            if (  len != 4  ) {
+                 System.out.println("Geben Sie bitte genau 4-stellige Code mit oben Bedingungen ein");
+                Versuchzahl = Versuchzahl - 1;
+                 System.out.println("die restlichen Versuchen sind " + Versuchzahl);
+                eingabe = input.next();                 
+            }
+            // check the number and the position            
+            for ( int i = Versuchzahl-1 ; i > 0; i-- ) {              
+                if ( places[0] == 4 ) {
+                    System.out.println(" Sie sind gewonnen. ");
+                     break;
+                } else {
+                    System.out.println("Anzahl der richtigen Ziffer mit richter Position ist " + places[0] + " .Geben Sie bitte weiter genau 4-stellige Code mit oben Bedingungen!");
+                    System.out.println("Anzahl der richtigen Ziffer mit falscher Position ist " + places[1]);
+                    System.out.println("die restlichen Versuchen sind " + i);
+                    eingabe = input.next(); 
+                }
 
-        int len = eingabe.length();        
-        if ( len != 4  ){
-            System.out.println("Geben Sie bitte genau 4-stellige Code mit oben Bedingungen ein");
-            eingabe = input.next();
+            }
+            System.out.println(" Sie sind leider verloren. " );
+        }  
 
-        } else {   
-            int Versuchzahl = 10; 
-            int richtigPosition = 0;
-            int falsePosition = 0;       
-            for ( int a = 0 ; a < 4; a++ ){
-                for( int b = 0; b < 4; b++ ){                    
-                    if( eingabe.charAt(b) == mastermindArray[a] ){
-                        if( a == b ) {
-                            richtigPosition = richtigPosition + 1;
-                        } else {
-                            falsePosition = falsePosition + 1;  
-                        }
-                        System.out.println("")
-                    }    
-                    else {
-                        System.out.println("Ihre Zahl hat keine richtigen Ziffer. Bitte geben Sie weiter eine 4-stellige Zahl mit den oben Bedingungen!");
-                        eingabe = input.next();
-
+    }  
+    public static int [] Zahlenraten( int richtig, int falsch, String eingabe) {
+        int[] output = new int[2];
+        for ( int a = 0 ; a < 4; a++ ){
+            for( int b = 0; b < 4; b++ ){                    
+                if( Character.getNumericValue(eingabe.charAt(b)) == mastermindArray[a] ){
+                    if( a == b ) {
+                        richtig = richtig + 1;
+                    } else {
+                        falsch = falsch + 1;  
                     }
-                } 
-            }       
-            System.out.println("die Anzahl des Ziffers mit richtiger Position " + richtigPosition);
-            System.out.println("die Anzahl des Ziffers mit falscher Position " + falsePosition);                  
-                
-        }         
-    }   
+                }     
+            }           
+        }
+        output[0] = richtig;
+        output[1] = falsch;
+        return output;       
+    }
     public static  int [] mastermindArrayGenerator() {
         int[] availabelNummer = new int[8];
         int[] generatedNummer = new int[4];
