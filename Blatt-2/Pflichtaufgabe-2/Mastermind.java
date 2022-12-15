@@ -23,16 +23,16 @@ public class Mastermind {
             String eingabe = input.next();
             boolean isValidGuess = isMastermind(eingabe);
             if (isValidGuess) {
-            System.out.println("Sie sind gewonnen!"); 
+                System.out.println("Sie sind gewonnen!"); 
             break;
             }
             else {
-            System.out.println("Sie können noch " + (remainedGuessTimes-1) + " mal versuchen!");
+                System.out.println("Sie können noch " + (remainedGuessTimes-1) + " mal versuchen!");
             }
         }
         
         if (remainedGuessTimes == 0)
-        System.out.println("Sie sind verloren!"); 
+            System.out.println("Sie sind verloren!"); 
     }
 
     public static boolean isMastermind(String eingabe) {
