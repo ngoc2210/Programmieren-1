@@ -4,6 +4,9 @@ import java.util.Scanner;
 public class MasterMind {   
     private static int[] mastermindArray;
     public static void main(String[] args){
+
+        System.out.println("Geben Sie bitte eine Code!");
+
         mastermindArray = mastermindArrayGenerator();
         for ( int i : mastermindArray ) {
             System.out.print (i);
@@ -16,43 +19,39 @@ public class MasterMind {
             Integer.parseInt(eingabe);
         } catch (Exception e) {
             System.out.println("Geben Sie bitte nur eine natuerliche Zahl, deren Ziffer von 1 bis 8 und keine Wiederholung der Ziffer!!"); 
-            Versuchzahl = Versuchzahl - 1; 
+            Versuchzahl = Versuchzahl - 1;
             System.out.println("die restlichen Versuchen sind " + Versuchzahl);
+        }    
+        eingabe = input.next();            
+        int len = eingabe.length();
+        // check the length of Input        
+        if (  len != 4  ) {
+            System.out.println("Geben Sie bitte genau 4-stellige Code mit oben Bedingungen ein");
+            Versuchzahl = Versuchzahl - 1;
+            System.out.println("die restlichen Versuchen sind " + Versuchzahl);
+            eingabe = input.next();                 
         }
         /* Array places besteht aus der Zahl von richtiger Stelle und falscher Stelle.*/
         int[] places = new int[2];
         int richtigPosition = 0;
         int falsePosition = 0;
         // the return of method is Array output 
-        places = Zahlenraten(richtigPosition, falsePosition, eingabe); 
-        if ( places[0] == 4 ) {
-            System.out.println(" Sie sind gewonnen. ");          
-        } else {  
-            eingabe = input.next();            
-            int len = eingabe.length();
-            // check the length of Input        
-            if (  len != 4  ) {
-                 System.out.println("Geben Sie bitte genau 4-stellige Code mit oben Bedingungen ein");
-                Versuchzahl = Versuchzahl - 1;
-                 System.out.println("die restlichen Versuchen sind " + Versuchzahl);
-                eingabe = input.next();                 
+        places = Zahlenraten(richtigPosition, falsePosition, eingabe);   
+        // check the number and the position            
+        for ( int i = Versuchzahl-1 ; i > 0; i-- ) { 
+            if ( places[0] == 4 ) {
+                System.out.println(" Sie sind gewonnen. ");
+                break;
+            } else {
+                System.out.println("Anzahl der richtigen Ziffer mit richter Position ist " + places[0] + " .Geben Sie bitte weiter genau 4-stellige Code mit oben Bedingungen!");
+                System.out.println("Anzahl der richtigen Ziffer mit falscher Position ist " + places[1]);
+                System.out.println("die restlichen Versuchen sind " + i);
+                eingabe = input.next(); 
             }
-            // check the number and the position            
-            for ( int i = Versuchzahl-1 ; i > 0; i-- ) {              
-                if ( places[0] == 4 ) {
-                    System.out.println(" Sie sind gewonnen. ");
-                     break;
-                } else {
-                    System.out.println("Anzahl der richtigen Ziffer mit richter Position ist " + places[0] + " .Geben Sie bitte weiter genau 4-stellige Code mit oben Bedingungen!");
-                    System.out.println("Anzahl der richtigen Ziffer mit falscher Position ist " + places[1]);
-                    System.out.println("die restlichen Versuchen sind " + i);
-                    eingabe = input.next(); 
-                }
-
-            }
-            System.out.println(" Sie sind leider verloren. " );
-        }  
-
+        }
+        if ( places[0] != 4) {
+            System.out.println(" Sie sind leider verloren. " ); 
+        }
     }  
     public static int [] Zahlenraten( int richtig, int falsch, String eingabe) {
         int[] output = new int[2];
