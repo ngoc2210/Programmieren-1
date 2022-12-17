@@ -4,6 +4,9 @@ import java.util.Scanner;
 public class MasterMind {   
     private static int[] mastermindArray;
     public static void main(String[] args){
+
+        System.out.println("Geben Sie bitte eine Code!");
+
         mastermindArray = mastermindArrayGenerator();
         for ( int i : mastermindArray ) {
             System.out.print (i);
@@ -16,8 +19,17 @@ public class MasterMind {
             Integer.parseInt(eingabe);
         } catch (Exception e) {
             System.out.println("Geben Sie bitte nur eine natuerliche Zahl, deren Ziffer von 1 bis 8 und keine Wiederholung der Ziffer!!"); 
-            Versuchzahl = Versuchzahl - 1; 
+            Versuchzahl = Versuchzahl - 1;
             System.out.println("die restlichen Versuchen sind " + Versuchzahl);
+        }    
+        eingabe = input.next();            
+        int len = eingabe.length();
+        // check the length of Input        
+        if (  len != 4  ) {
+            System.out.println("Geben Sie bitte genau 4-stellige Code mit oben Bedingungen ein");
+            Versuchzahl = Versuchzahl - 1;
+            System.out.println("die restlichen Versuchen sind " + Versuchzahl);
+            eingabe = input.next();                 
         }
         /*        
         if ( places[0] == 4 ) {
