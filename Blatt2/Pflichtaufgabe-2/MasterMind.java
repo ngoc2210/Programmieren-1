@@ -3,9 +3,10 @@ import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;
 	public class MasterMind {
-	    private static int[] mastermindArray;
 		public static void main(String[] args) {
+	
 			System.out.println("Geben Sie bitte eine Code!");
+			int[] mastermindArray;
 			mastermindArray = mastermindArrayGenerator();
 			for ( int i : mastermindArray ) {
 				System.out.print (i);
@@ -38,7 +39,10 @@ import java.util.Arrays;
 			    if (checkPosition( Versuchzahl, eingabe, input, mastermindArray ) == true){
                     break;
                 } else {
-			        System.out.println("Sie sind leider verloren " );
+			        System.out.println("Sie sind leider verloren.Die Code ist " );
+					for ( int i : mastermindArray ) {
+						System.out.print (i);
+					}	
                     break;
                 }
 		    } 
@@ -69,7 +73,7 @@ import java.util.Arrays;
 	    	int[] places = new int[2];
 		    int richtigPosition = 0;
 		    int falsePosition = 0;
-	        for ( int i = Versuchzahl -1; i > 0; i--) { 
+	        for ( int i = Versuchzahl -1; i > -1; i--) { 
                 // the return of method is Array output 
 		        places = Zahlenraten(richtigPosition, falsePosition, eingabe, mastermindArray);                 
 		        if ( places[0] == 4 ) {
@@ -77,7 +81,7 @@ import java.util.Arrays;
                     x = true;
 			        break;
 			    } else {
-			        System.out.println("Anzahl der richtigen Ziffer mit richter Position ist " + places[0] + " .Geben Sie bitte weiter genau 4-stellige Code mit oben Bedingungen!");
+			        System.out.println("Anzahl der richtigen Ziffer mit richtiger Position ist " + places[0] + ". Geben Sie bitte genau 4-stellige Code, deren Ziffer von 1 bis 8 und keine Wiederholdung vom Ziffer!");
 			        System.out.println("Anzahl der richtigen Ziffer mit falscher Position ist " + places[1]);
 			        System.out.println("die restlichen Versuchen sind " + i );
 			        eingabe = input.next(); 
@@ -102,7 +106,7 @@ import java.util.Arrays;
 		    output[1] = falsch;
 		    return output;       
 	    }	
-	    public static  int [] mastermindArrayGenerator() {
+	    public static int [] mastermindArrayGenerator() {
 		    int a, b, c, d;
 		    boolean x;
 		    int[] code= new int[4];
