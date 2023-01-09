@@ -1,9 +1,12 @@
 import java.util.Random;
 import java.util.Scanner;
+
 public class Player {
+
     String name;
     private Stack kartenStapel; 
     private int punkteStand;
+
     public Player(String name, int punkteStand, Stack kartenStapel) {
         this.name = name;
         this.punkteStand = punkteStand;
@@ -21,6 +24,7 @@ public class Player {
     public int getPoints() {
         return punkteStand;
     }
+
     public Stack getKartenstapel() {
         return kartenStapel;
     }
@@ -36,21 +40,17 @@ public class Player {
     public Card playCard() {
         return kartenStapel.playCard();    
     }
+
     public int spielerchoosedKategorie() {
         System.out.println("Geben Sie bitte 1 für height, 2 für intelligence,3 für strength oder 4 für jedipower ein! ");
         Scanner sc = new Scanner(System.in);
         int kategorieofplayer = sc.nextInt();
         return kategorieofplayer;
     }
+
     public int computerchoosedKategorie() {
         Random random = new Random();
         int kategorieofcomputer = random.nextInt(4)+1;
         return kategorieofcomputer;
     }
-     
-    /*public static void main(String[] args) {
-        Stack stapel1 = new Stack();
-        Player teste = new Player("Ngoc", 0, stapel1 );
-        teste.showCard(stapel1);
-    } */
 }
